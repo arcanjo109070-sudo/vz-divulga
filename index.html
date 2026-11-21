@@ -1,208 +1,191 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VZ DIVULGA 🔥 - Divulgação que Cresce</title>
+<title>VZ DIVULGA 🔥</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:#000;color:#fff;font-family:Arial,Helvetica,sans-serif;overflow-x:hidden}
+body{background:#050505;color:#fff;font-family:Arial,Helvetica,sans-serif;overflow-x:hidden}
 a{text-decoration:none;color:inherit}
-
-/* TELA DE ABERTURA */
+/* SPLASH */
 #splash{position:fixed;inset:0;background:#000;z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .6s}
 #splash img{width:180px;height:180px;object-fit:cover;border-radius:50%;border:4px solid #FF0000;box-shadow:0 0 50px #FF0000,0 0 100px #FF0000;animation:spinZoom 2.2s ease forwards}
-#splash h1{margin-top:20px;font-size:38px;letter-spacing:3px;animation:fadeIn 1s .5s both}
+#splash h1{margin-top:20px;font-size:38px;letter-spacing:3px}
 @keyframes spinZoom{0%{transform:scale(0) rotate(0deg);opacity:0}60%{transform:scale(1.15) rotate(360deg);opacity:1}100%{transform:scale(1) rotate(360deg)}}
-@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
-
-/* HERO */
-.hero{padding:50px 20px 30px;text-align:center;background:radial-gradient(circle at 50% 0%,#3a0000 0%,#000 60%);position:relative}
-.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(circle,rgba(255,0,0,.15),transparent 60%);pointer-events:none}
-.hero img.logo{width:200px;height:200px;object-fit:cover;border-radius:50%;border:4px solid #FF0000;box-shadow:0 0 40px #FF0000,0 0 80px rgba(255,0,0,.6);position:relative}
-.hero h1{font-size:44px;margin:18px 0 8px;letter-spacing:1px}
-.hero h1 span{color:#FF0000}
-.hero p{color:#ddd;max-width:620px;margin:0 auto;line-height:1.6;font-size:16px}
-.btn-insta{display:inline-block;margin-top:22px;background:#fff;color:#000;padding:15px 28px;border-radius:50px;font-weight:900;font-size:17px;box-shadow:0 0 25px rgba(255,255,255,.4)}
-.btn-insta:hover{transform:scale(1.03)}
-
-section{padding:42px 20px;max-width:920px;margin:auto}
-h2{font-size:30px;text-align:center;margin-bottom:8px;line-height:1.2}
+/* HERO IGUAL DO VIDEO */
+.hero{max-width:1100px;margin:auto;padding:50px 20px 20px;display:flex;align-items:center;gap:30px;background:radial-gradient(circle at 80% 20%,#3a0000,#000 60%)}
+.hero-text{flex:1;text-align:left}
+.hero-text h1{font-size:64px;line-height:.9}
+.hero-text h1 span{color:#FF0000}
+.hero-text p{color:#ccc;margin:16px 0;line-height:1.6;max-width:520px}
+.hero-text .btn-w{display:inline-block;background:#fff;color:#000;padding:14px 24px;border-radius:50px;font-weight:900}
+.hero-text .btn-r{display:inline-block;background:transparent;border:1px solid #FF0000;color:#fff;padding:14px 24px;border-radius:50px;font-weight:900;margin-left:8px}
+.hero-logo{flex:1;text-align:center}
+.hero-logo img{width:340px;height:340px;object-fit:cover;border-radius:50%;border:4px solid #FF0000;box-shadow:0 0 60px #FF0000,0 0 120px rgba(255,0,0,.6)}
+/* STATS */
+.stats{max-width:1100px;margin:20px auto;display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:12px;padding:0 20px}
+.stat{background:#111;border:1px solid #333;border-radius:14px;padding:18px;text-align:center}
+.stat b{color:#FF0000;font-size:22px;display:block}
+.stat span{font-size:13px;color:#aaa}
+section{padding:45px 20px;max-width:1100px;margin:auto}
+h2{font-size:34px;text-align:center}
 h2 span{color:#FF0000}
-.sub{text-align:center;color:#bbb;margin-bottom:26px;line-height:1.5}
-
-/* CARDS PREÇOS */
-.card{background:#111;border:1px solid #333;border-radius:18px;padding:20px;margin:14px 0;display:flex;justify-content:space-between;align-items:center;position:relative;overflow:hidden}
-.card:hover{border-color:#FF0000;box-shadow:0 0 25px rgba(255,0,0,.4)}
-.card b{font-size:19px}
-.card small{color:#aaa;display:block;margin-top:4px;line-height:1.4}
-.price{font-size:30px;font-weight:900;color:#FF0000;white-space:nowrap}
-.price small{font-size:13px;color:#fff;display:block}
-.badge{position:absolute;top:0;right:0;background:#FF0000;color:#fff;font-size:11px;font-weight:900;padding:6px 12px;border-bottom-left-radius:12px}
-.card.destaque{border:2px solid #FF0000;background:#1a0000}
-
-/* PACOTES BRANCOS */
-.grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
-.pacote{background:#fff;color:#000;border-radius:18px;padding:22px;text-align:center;position:relative;overflow:hidden}
-.pacote h3{font-size:16px}
-.pacote .valor{font-size:30px;font-weight:900;color:#FF0000;margin:12px 0 4px}
-.pacote p{font-size:13px;color:#555}
-.pacote a{display:block;background:#000;color:#fff;padding:13px;border-radius:12px;font-weight:900;margin-top:14px}
-.pacote.melhor{border:3px solid #FF0000;transform:scale(1.03)}
+.sub{text-align:center;color:#aaa;margin:10px 0 28px}
+.row{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:14px}
+.card{background:#111;border:1px solid #333;border-radius:18px;padding:22px;text-align:center}
+.card:hover{border-color:#FF0000;box-shadow:0 0 25px rgba(255,0,0,.5)}
+.card b{font-size:17px}
+.card .price{font-size:32px;font-weight:900;color:#FF0000;margin:10px 0 4px}
+.card small{color:#999}
+.card.destaque{border:2px solid #FF0000;background:#1a0000;transform:scale(1.03)}
+.badge{background:#FF0000;color:#fff;font-size:11px;font-weight:900;padding:5px 10px;border-radius:20px;display:inline-block;margin-bottom:8px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+.pacote{background:#fff;color:#000;border-radius:18px;padding:24px;text-align:center}
+.pacote .valor{font-size:32px;font-weight:900;color:#FF0000;margin:10px 0}
+.pacote a{display:block;background:#000;color:#fff;padding:13px;border-radius:12px;font-weight:900;margin-top:12px}
+.pacote.melhor{border:3px solid #FF0000;transform:scale(1.04)}
 .pacote.melhor a{background:#FF0000}
-.pacote .badge2{background:#FF0000;color:#fff;font-size:11px;font-weight:900;padding:5px 10px;border-radius:20px;display:inline-block;margin-bottom:8px}
-
 /* COMO FUNCIONA */
-.passo{background:#111;border-left:5px solid #FF0000;border-radius:14px;padding:20px;margin:14px 0}
-.passo b{color:#FF0000;font-size:18px;display:block;margin-bottom:8px}
-.passo p{color:#ddd;line-height:1.6;font-size:15px}
-
+.timeline{display:grid;grid-template-columns:1fr 1fr 1fr 1fr 1fr;gap:12px}
+.passo{background:#111;border:1px solid #FF0000;border-radius:16px;padding:18px;text-align:left}
+.passo .num{background:#FF0000;width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;margin-bottom:10px}
+.passo b{color:#fff;font-size:15px}
+.passo p{color:#bbb;font-size:13px;line-height:1.5;margin-top:8px}
+/* COMENTARIOS */
+.depo{background:#111;border:1px solid #FF0000;border-radius:16px;padding:20px}
+.depo .stars{color:#FF0000;font-size:18px}
+.depo b{color:#FF0000;display:block;margin:8px 0 4px}
+.depo p{color:#ddd;line-height:1.5;font-size:14px}
 /* FORM */
-.form-box{background:#111;border:1px solid #333;border-radius:20px;padding:24px}
-label{font-weight:800;font-size:14px;display:block;margin:18px 0 8px;text-align:left}
+.form-box{background:#111;border:1px solid #FF0000;border-radius:20px;padding:26px;max-width:800px;margin:auto}
+label{font-weight:800;font-size:14px;display:block;margin:16px 0 8px;text-align:left}
 input,textarea{width:100%;padding:14px;border-radius:12px;border:1px solid #333;background:#000;color:#fff;font-size:15px;outline:none}
-input:focus,textarea:focus{border-color:#FF0000;box-shadow:0 0 15px rgba(255,0,0,.4)}
+input:focus,textarea:focus{border-color:#FF0000}
 .opts{display:flex;flex-wrap:wrap;gap:8px}
 .opt{flex:1;min-width:110px;background:#000;border:1px solid #444;color:#fff;padding:12px 8px;border-radius:12px;font-weight:700;cursor:pointer;text-align:center;font-size:14px}
-.opt.active{background:#FF0000;border-color:#FF0000;box-shadow:0 0 18px rgba(255,0,0,.6)}
+.opt.active{background:#FF0000;border-color:#FF0000}
 .btn-big{display:block;width:100%;margin-top:22px;background:#FF0000;color:#fff;padding:18px;border:none;border-radius:15px;font-weight:900;font-size:18px;cursor:pointer;box-shadow:0 0 30px rgba(255,0,0,.7)}
-.btn-big:active{transform:scale(.98)}
-.hint{text-align:center;color:#999;font-size:13px;margin-top:10px}
-
-/* CTA FINAL */
-.cta{text-align:center;padding:50px 20px;background:radial-gradient(circle,#3a0000,#000)}
+.btn-post{background:#fff;color:#000;padding:14px;border:none;border-radius:12px;font-weight:900;width:100%;margin-top:12px;cursor:pointer}
+.cta{text-align:center;padding:60px 20px;background:radial-gradient(circle,#3a0000,#000)}
 .cta a{display:inline-block;background:#FF0000;color:#fff;padding:20px 30px;border-radius:50px;font-weight:900;font-size:20px;box-shadow:0 0 40px #FF0000;animation:pulse 1.8s infinite}
 @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
 footer{text-align:center;padding:28px;color:#777;font-size:13px}
 footer img{width:60px;height:60px;object-fit:cover;border-radius:50%;border:2px solid #FF0000;margin-bottom:10px}
-@media(max-width:640px){.grid{grid-template-columns:1fr}.hero h1{font-size:36px}.card{flex-direction:column;align-items:flex-start;gap:10px}.price{font-size:26px}.cta a{font-size:17px;padding:18px 20px}}
+@media(max-width:760px){.hero{flex-direction:column-reverse;text-align:center}.hero-text{text-align:center}.hero-text h1{font-size:44px}.hero-logo img{width:230px;height:230px}.stats{grid-template-columns:1fr 1fr}.row{grid-template-columns:1fr 1fr}.grid3{grid-template-columns:1fr}.timeline{grid-template-columns:1fr}.hero-text .btn-r{margin-left:0;margin-top:8px}}
+@media(max-width:480px){.row{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 
-<!-- SPLASH -->
-<div id="splash">
-<img src="logo.png" alt="VZ DIVULGA">
-<h1>VZ DIVULGA</h1>
-</div>
+<div id="splash"><img src="logo.png"><h1>VZ DIVULGA</h1></div>
 
-<!-- TOPO -->
 <div class="hero">
-<img class="logo" src="logo.png" alt="VZ DIVULGA">
-<h1>VZ <span>DIVULGA</span></h1>
-<p>Seu som, seu projeto, nosso corre pra muita gente ver. Somos a VZ Divulga, a equipe que faz seu conteúdo chegar no povo, com preço que cabe no bolso.</p>
-<a class="btn-insta" href="https://www.instagram.com/vz_divulga?knvt=a3FvaXN5ZHZxZWVv" target="_blank">📸 【entity-INSTAGRAM¦canonical_name=Instagram】 @vz_divulga</a>
+<div class="hero-text">
+<h1>VZ<br><span>DIVULGA</span></h1>
+<p>Seu som, seu grupo, seu projeto, nosso corre pra muita gente ver. Somos a VZ Divulga, a equipe que faz seu conteúdo chegar no povo, e com preço que cabe no bolso.</p>
+<a class="btn-w" href="https://www.instagram.com/vz_divulga?knvt=a3FvaXN5ZHZxZWVv" target="_blank">📸 INSTAGRAM @vz_divulga</a>
+<a class="btn-r" href="#precos">VER TABELA DE PREÇOS</a>
+</div>
+<div class="hero-logo"><img src="logo.png"></div>
 </div>
 
-<!-- PREÇOS -->
+<div class="stats">
+<div class="stat"><b>15+</b><span>GRUPOS ATIVOS</span></div>
+<div class="stat"><b>100+</b><span>DIVULGADOS</span></div>
+<div class="stat"><b>24H</b><span>ATENDIMENTO</span></div>
+<div class="stat"><b>100%</b><span>PARCERIA</span></div>
+</div>
+
 <section id="precos">
 <h2>💸 TABELA DE <span>PREÇOS</span></h2>
 <p class="sub">Escolha o melhor plano e divulgue seu conteúdo no nosso perfil.</p>
-
-<div class="card"><div><b>01 DIA</b><small>Divulgação por 1 dia nos stories</small></div><div class="price">R$ 2,50<small>REAIS</small></div></div>
-<div class="card"><div><b>03 DIAS</b><small>Divulgação por 3 dias</small></div><div class="price">R$ 4,15<small>REAIS</small></div></div>
-<div class="card destaque"><span class="badge">MAIS PEDIDO 🔥</span><div><b>1 SEMANA</b><small>Divulgação por 7 dias - o que mais sai!</small></div><div class="price">R$ 6,00<small>REAIS</small></div></div>
-<div class="card"><div><b>1 MÊS</b><small>Divulgação completa por 30 dias</small></div><div class="price">R$ 15,00<small>REAIS</small></div></div>
-</section>
-
-<!-- PACOTES -->
-<section>
-<h2>📦 PACOTES <span>SEMANAIS</span></h2>
-<p class="sub">Quer crescer sem parar? Fecha um pacote e economiza.</p>
-<div class="grid">
-<div class="pacote"><h3>1 MÊS</h3><div class="valor">15,00 REAIS</div><p>Divulgação contínua</p><a href="https://ig.me/m/vz_divulga" target="_blank">QUERO ESSE</a></div>
-<div class="pacote"><h3>02 MESES</h3><div class="valor">24,50 REAIS</div><p>Mais tempo, mais alcance</p><a href="https://ig.me/m/vz_divulga" target="_blank">QUERO ESSE</a></div>
-<div class="pacote melhor"><span class="badge2">MELHOR PREÇO 🔥</span><h3>05 MESES</h3><div class="valor">35,00 REAIS</div><p>Melhor custo-benefício</p><a href="https://ig.me/m/vz_divulga" target="_blank">QUERO ESSE</a></div>
+<div class="row">
+<div class="card"><b>01 DIA</b><div class="price">R$ 2,50</div><small>REAIS<br>Divulgação por 1 dia</small></div>
+<div class="card"><b>03 DIAS</b><div class="price">R$ 4,15</div><small>REAIS<br>Divulgação por 3 dias</small></div>
+<div class="card destaque"><span class="badge">MAIS PEDIDO 🔥</span><b>1 SEMANA</b><div class="price">R$ 6,00</div><small>REAIS<br>Divulgação por 7 dias</small></div>
+<div class="card"><b>1 MÊS</b><div class="price">R$ 15,00</div><small>REAIS<br>Divulgação por 30 dias</small></div>
 </div>
 </section>
 
-<!-- COMO FUNCIONA -->
+<section>
+<h2>📦 PACOTES <span>SEMANAIS</span></h2>
+<p class="sub">Quer crescer sem parar? Fecha um pacote e economiza.</p>
+<div class="grid3">
+<div class="pacote"><h3>1 MÊS</h3><div class="valor">15,00 REAIS</div><p>Divulgação contínua</p><a href="https://ig.me/m/vz_divulga" target="_blank">QUERO ESSE</a></div>
+<div class="pacote"><h3>02 MESES</h3><div class="valor">24,50 REAIS</div><p>Mais tempo, mais alcance</p><a href="https://ig.me/m/vz_divulga" target="_blank">QUERO ESSE</a></div>
+<div class="pacote melhor"><span class="badge">MELHOR PREÇO 🔥</span><h3>05 MESES</h3><div class="valor">35,00 REAIS</div><p>Melhor custo-benefício</p><a href="https://ig.me/m/vz_divulga" target="_blank">QUERO ESSE</a></div>
+</div>
+</section>
+
 <section>
 <h2>COMO FUNCIONA? É SIMPLES E NA PARCERIA 🤝</h2>
 <p class="sub">Salve irmão, salve irmã! Na paz? Aqui é parceria de verdade. Você me ajuda e eu te ajudo a crescer. Funciona assim:</p>
-
-<div class="passo"><b>Passo 1 - VOCÊ CHAMA A GENTE</b><p>Você clica no botão aqui embaixo e chama no meu PV. Pode ser pelo 【entity-Instagram¦canonical_name=Instagram】, WhatsApp ou E-mail. Tem gente que não tem 【entity-Instagram¦canonical_name=Instagram】 e tem gente que não tem WhatsApp, então a gente atende por onde for melhor pra você.</p></div>
-<div class="passo"><b>Passo 2 - A GENTE CONVERSA</b><p>A gente vai trocar uma ideia na boa. Vou te perguntar: 'A tabela de preço tá lá no site, mano, qual você vai querer?' E o mais importante: qual é a sua meta?</p></div>
-<div class="passo"><b>Passo 3 - O QUE VOCÊ QUER?</b><p>Me fala se você quer SÓ A DIVULGAÇÃO ou se você quer DIVULGAÇÃO + MEMBROS PRO SEU GRUPO. Isso eu preciso saber, porque não adianta você pagar 3 dias e não entrar ninguém, aí não compensou pra você. Eu quero que valha a pena pra você.</p></div>
-<div class="passo"><b>Passo 4 - PAGAMENTO ANTES</b><p>Depois que você escolher, eu te passo meu Pix. O pagamento é feito antes pra eu já começar na hora.</p></div>
-<div class="passo"><b>Passo 5 - COMEÇA A DIVULGAÇÃO NA HORA</b><p>Eu começo divulgando você em MAIS DE 15 GRUPOS ativos, mercado a bala, divulgação pra todo lado. Seu perfil / grupo vai aparecer pra muita gente de verdade.</p></div>
+<div class="timeline">
+<div class="passo"><div class="num">1</div><b>VOCÊ CHAMA A GENTE</b><p>Você clica no botão aqui embaixo e chama no meu PV. Pode ser pelo Instagram, WhatsApp ou E-mail. Tem gente que não tem Instagram e tem gente que não tem WhatsApp, então a gente atende por onde for melhor pra você.</p></div>
+<div class="passo"><div class="num">2</div><b>A GENTE CONVERSA</b><p>A gente vai trocar uma ideia na boa. Vou te perguntar: 'A tabela de preço tá lá no site, mano, qual você vai querer?' E o mais importante: qual é a sua meta?</p></div>
+<div class="passo"><div class="num">3</div><b>O QUE VOCÊ QUER?</b><p>Me fala se você quer SÓ A DIVULGAÇÃO ou se você quer DIVULGAÇÃO + MEMBROS PRO SEU GRUPO. Isso eu preciso saber, porque não adianta você pagar 3 dias e não entrar ninguém, aí não compensou pra você. Eu quero que valha a pena pra você.</p></div>
+<div class="passo"><div class="num">4</div><b>PAGAMENTO ANTES</b><p>Depois que você escolher, eu te passo meu Pix. O pagamento é feito antes pra eu já começar na hora.</p></div>
+<div class="passo"><div class="num">5</div><b>COMEÇA NA HORA</b><p>Eu começo divulgando você em MAIS DE 15 GRUPOS ativos, mercado a bala, divulgação pra todo lado. Seu perfil / grupo vai aparecer pra muita gente de verdade.</p></div>
+</div>
 </section>
 
-<!-- FORM -->
+<section>
+<h2>💬 O QUE A GALERA <span>TÁ FALANDO</span></h2>
+<p class="sub">Quem já divulgou com a VZ, aprovou!</p>
+<div id="lista-comentarios" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px">
+<div class="depo"><div class="stars">★★★★★</div><b>@pedro_mkt</b><p>"Mano, paguei 1 semana e meu grupo lotou! VZ é brabo demais 🔥"</p></div>
+<div class="depo"><div class="stars">★★★★★</div><b>@maria_loja</b><p>"Atendimento na hora, paguei no Pix e ele já começou a divulgar. Recomendo muito!"</p></div>
+<div class="depo"><div class="stars">★★★★★</div><b>@lucas_019</b><p>"Comprei 1 mês e já entrou mais de 40 membros. Valeu cada real!"</p></div>
+</div>
+<div class="form-box" style="margin-top:20px">
+<h3>Deixa seu comentário 👇</h3>
+<label>Seu nome / @ do insta</label>
+<input id="nome-coment" placeholder="Ex: @seu_perfil">
+<label>O que você achou da divulgação?</label>
+<textarea id="texto-coment" rows="3" placeholder="Conta pra gente como foi..."></textarea>
+<button class="btn-post" onclick="postarComentario()">POSTAR COMENTÁRIO</button>
+</div>
+</section>
+
 <section>
 <h2>FAZ A SUA <span>DIVULGAÇÃO 🚀</span></h2>
 <p class="sub">Preencha rapidinho e fala com o VZ</p>
 <div class="form-box">
-<label>Seu nome / @ do 【entity-Instagram¦canonical_name=Instagram】</label>
-<input id="nome" placeholder="Ex: @seu_perfil ou Seu nome">
-
+<label>Seu nome / @ do Instagram</label>
+<input id="nome" placeholder="Ex: @seu_perfil">
 <label>Como quer que eu fale com você?</label>
-<div class="opts" id="contato">
-<button type="button" class="opt active" data-v="【entity-Instagram¦canonical_name=Instagram】">【entity-Instagram¦canonical_name=Instagram】</button>
-<button type="button" class="opt" data-v="WhatsApp">WhatsApp</button>
-<button type="button" class="opt" data-v="E-mail">E-mail</button>
-</div>
-
+<div class="opts" id="contato"><button type="button" class="opt active">Instagram</button><button type="button" class="opt">WhatsApp</button><button type="button" class="opt">E-mail</button></div>
 <label>O que você quer?</label>
-<div class="opts" id="tipo">
-<button type="button" class="opt active" data-v="Só Divulgação">Só Divulgação</button>
-<button type="button" class="opt" data-v="Divulgação + Membros pro meu grupo">Divulgação + Membros</button>
-</div>
-
+<div class="opts" id="tipo"><button type="button" class="opt active">Só Divulgação</button><button type="button" class="opt">Divulgação + Membros pro meu grupo</button></div>
 <label>Qual sua meta?</label>
 <input id="meta" placeholder='Ex: "Quero 50 membros" / "Quero mais seguidores"'>
-
 <label>Qual plano você quer?</label>
-<div class="opts" id="plano">
-<button type="button" class="opt active" data-v="01 Dia - R$2,50">01 Dia - R$2,50</button>
-<button type="button" class="opt" data-v="03 Dias - R$4,15">03 Dias - R$4,15</button>
-<button type="button" class="opt" data-v="1 Semana - R$6,00">1 Semana - R$6,00</button>
-<button type="button" class="opt" data-v="1 Mês - R$15,00">1 Mês - R$15,00</button>
-<button type="button" class="opt" data-v="Pacotes">Pacotes</button>
-</div>
-
-<button class="btn-big" onclick="enviar()">💬 SOLICITAR AGORA E FALAR COM O VZ</button>
-<p class="hint">Ao clicar você vai direto pro Direct do 【entity-Instagram¦canonical_name=Instagram】 da VZ Divulga</p>
+<div class="opts" id="plano"><button type="button" class="opt active">01 Dia - R$2,50</button><button type="button" class="opt">03 Dias - R$4,15</button><button type="button" class="opt">1 Semana - R$6,00</button><button type="button" class="opt">1 Mês - R$15,00</button><button type="button" class="opt">Pacotes</button></div>
+<button class="btn-big" onclick="window.open('https://ig.me/m/vz_divulga','_blank')">💬 SOLICITAR AGORA E FALAR COM O VZ</button>
 </div>
 </section>
 
-<!-- CTA FINAL -->
 <div class="cta">
+<h2 style="margin-bottom:18px">BORA CRESCER <span>JUNTO?</span></h2>
 <a href="https://ig.me/m/vz_divulga" target="_blank">💬 FAZER UM ORÇAMENTO BACANA →</a>
 <p style="margin-top:16px;color:#ccc">Clica aqui e fala com a gente agora!</p>
 </div>
 
-<footer>
-<img src="logo.png"><br>
-<b style="color:#fff">VZ DIVULGA</b><br>
-VZ DIVULGA © 2026 - Todos os direitos reservados
-</footer>
+<footer><img src="logo.png"><br><b style="color:#fff">VZ DIVULGA</b><br>VZ DIVULGA © 2026 - Todos os direitos reservados</footer>
 
 <script>
-// Splash some depois de 2.2s
-setTimeout(()=>{
-  const s=document.getElementById('splash');
-  s.style.opacity='0';
-  setTimeout(()=>s.remove(),650);
-},2200);
-
-// Seleção dos botões do form
-document.querySelectorAll('.opts').forEach(grupo=>{
-  grupo.querySelectorAll('.opt').forEach(btn=>{
-    btn.addEventListener('click',()=>{
-      grupo.querySelectorAll('.opt').forEach(b=>b.classList.remove('active'));
-      btn.classList.add('active');
-    });
-  });
-});
-
-function getSel(id){
-  const el=document.querySelector('#'+id+' .opt.active');
-  return el ? el.dataset.v : '';
-}
-function enviar(){
-  // Abre direto o Direct - link oficial da VZ
-  window.open('https://ig.me/m/vz_divulga','_blank');
+setTimeout(()=>{const s=document.getElementById('splash');s.style.opacity='0';setTimeout(()=>s.remove(),650);},2200);
+document.querySelectorAll('.opts').forEach(g=>{g.querySelectorAll('.opt').forEach(btn=>{btn.addEventListener('click',()=>{g.querySelectorAll('.opt').forEach(b=>b.classList.remove('active'));btn.classList.add('active');});});});
+function postarComentario(){
+  const nome=document.getElementById('nome-coment').value.trim();
+  const texto=document.getElementById('texto-coment').value.trim();
+  if(!nome||!texto){alert('Preencha seu nome e seu comentário!');return;}
+  const div=document.createElement('div');div.className='depo';
+  div.innerHTML='<div class="stars">★★★★★</div><b>'+nome+'</b><p>"'+texto+'"</p>';
+  document.getElementById('lista-comentarios').prepend(div);
+  document.getElementById('nome-coment').value='';document.getElementById('texto-coment').value='';
+  alert('Comentário postado! Valeu pela moral 🔥');
 }
 </script>
 </body>
